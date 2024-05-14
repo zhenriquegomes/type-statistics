@@ -1,10 +1,10 @@
 interface UnparsedTransaction {
   ID: number;
-  Status: string;
+  Status: keyof PaymentStatus;
   Data: string;
   Nome: string;
   Email: string;
-  ["Forma de Pagamento"]: string;
+  ["Forma de Pagamento"]: keyof FormOfPayment;
   ["Valor (R$)"]: string;
   ["Cliente Novo"]: number;
 }

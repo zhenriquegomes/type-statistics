@@ -1,10 +1,10 @@
 interface Transaction {
   id: number;
-  status: string;
+  status: keyof PaymentStatus;
   data: string;
   nome: string;
   email: string;
-  formaPagamento: string;
+  formaPagamento: keyof FormOfPayment;
   valor: number;
   isClienteNovo: boolean;
 }
