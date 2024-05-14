@@ -6,7 +6,8 @@
     "allowJs": true,
     "removeComments": true,
     "noImplicitReturns": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "module": "ESNext"
   },
   "include": ["src"],
   "exclude": ["node_modules"]
