@@ -1,7 +1,7 @@
 interface Transaction {
   id: number;
   status: keyof PaymentStatus;
-  data: string;
+  data: Date;
   nome: string;
   email: string;
   formaPagamento: keyof FormOfPayment;
