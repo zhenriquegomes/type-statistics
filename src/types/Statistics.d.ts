@@ -6,5 +6,5 @@ interface Statistics {
   refusedByCreditCard: number;
   awaitingPayment: number;
   reversed: number;
-  bestSellDay: number;
+  bestSellDay: string;
 }
