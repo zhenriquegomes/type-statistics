@@ -10,13 +10,20 @@ function parseNumber(value: string): number {
   }
 }
 
+function parseDate(value: string): Date {
+  const [dateStr, timeStr] = value.split(" ");
+  const [day, month, year] = dateStr.split("/").map(Number);
+  const [hour, minute] = timeStr.split(":").map(Number);
+  return new Date(year, month - 1, day, hour, minute);
+}
+
 function parseTransaction(
   unparsedTransaction: UnparsedTransaction
 ): Transaction {
   return {
     id: unparsedTransaction.ID,
     status: unparsedTransaction.Status,
-    data: unparsedTransaction.Data,
+    data: parseDate(unparsedTransaction.Data),
     nome: unparsedTransaction.Nome,
     email: unparsedTransaction.Email,
     formaPagamento: unparsedTransaction["Forma de Pagamento"],
