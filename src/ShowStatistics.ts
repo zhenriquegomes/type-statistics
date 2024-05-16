@@ -1,7 +1,7 @@
 export function showStatistics(statistics: Statistics) {
   const total = document.querySelector<HTMLParagraphElement>("#total");
   if (total) {
-    total.innerText = `Total: R$ ${statistics.total}`;
+    total.innerText = `Total: $ ${statistics.total}`;
   }
   const paymentMethods = document.querySelector<HTMLDivElement>("#pagamento");
   if (paymentMethods) {
