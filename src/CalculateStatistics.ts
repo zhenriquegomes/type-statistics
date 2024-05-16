@@ -22,41 +22,41 @@ function countByFilter<T>(
 
 function getBestSalesDay(transactions: Transaction[]): string {
   const week = {
-    ["Domingo"]: 0,
-    ["Segunda"]: 0,
-    ["Terça"]: 0,
-    ["Quarta"]: 0,
-    ["Quinta"]: 0,
-    ["Sexta"]: 0,
-    ["Sabado"]: 0,
+    ["Sunday"]: 0,
+    ["Monday"]: 0,
+    ["Tuesday"]: 0,
+    ["Wednesday"]: 0,
+    ["Thursday"]: 0,
+    ["Friday"]: 0,
+    ["Saturday"]: 0,
   };
   for (let i = 0; i < transactions.length; i++) {
     if (transactions[i].data.getDay() === 0) {
-      week["Domingo"] += 1;
+      week["Sunday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 1) {
-      week["Segunda"] += 1;
+      week["Monday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 2) {
-      week["Terça"] += 1;
+      week["Tuesday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 3) {
-      week["Quarta"] += 1;
+      week["Wednesday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 4) {
-      week["Quinta"] += 1;
+      week["Thursday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 5) {
-      week["Sexta"] += 1;
+      week["Friday"] += 1;
       continue;
     }
     if (transactions[i].data.getDay() === 6) {
-      week["Sabado"] += 1;
+      week["Saturday"] += 1;
       continue;
     }
   }
