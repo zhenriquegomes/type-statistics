@@ -23,12 +23,12 @@ function parseTransaction(
   return {
     id: unparsedTransaction.ID,
     status: unparsedTransaction.Status,
-    data: parseDate(unparsedTransaction.Data),
-    nome: unparsedTransaction.Nome,
+    date: parseDate(unparsedTransaction.Data),
+    name: unparsedTransaction.Nome,
     email: unparsedTransaction.Email,
-    formaPagamento: unparsedTransaction["Forma de Pagamento"],
-    valor: parseNumber(unparsedTransaction["Valor (R$)"]),
-    isClienteNovo: unparsedTransaction["Cliente Novo"] ? true : false,
+    paymentMethod: unparsedTransaction["Forma de Pagamento"],
+    value: parseNumber(unparsedTransaction["Valor (R$)"]),
+    isNewClient: unparsedTransaction["Cliente Novo"] ? true : false,
   };
 }
 

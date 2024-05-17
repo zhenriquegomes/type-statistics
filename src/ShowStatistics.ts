@@ -1,3 +1,5 @@
+import Transaction from "./types/Transaction";
+
 export function showStatistics(statistics: Statistics) {
   const total = document.querySelector<HTMLParagraphElement>("#total");
   if (total) {
@@ -15,5 +17,23 @@ export function showStatistics(statistics: Statistics) {
     status.innerHTML += `<p>Refused by credit card: ${statistics.refusedByCreditCard}</p>`;
     status.innerHTML += `<p>Reversed: ${statistics.reversed}</p>`;
     status.innerHTML += `<p>Best sales day: ${statistics.bestSellDay}</p>`;
+  }
+}
+
+export function showTransactions(transactions: Transaction[]) {
+  const tbody = document.querySelector<HTMLTableElement>("table");
+  if (tbody) {
+    transactions.forEach((transaction, index) => {
+      tbody.innerHTML += `
+      <tr>
+        <th scope="row">${index + 1}</th>
+        <td>${transaction.name}</td>
+        <td>${transaction.email}</td>
+        <td>${transaction.value}</td>
+        <td>${transaction.paymentMethod}</td>
+        <td>${transaction.status}</td>
+      </tr>
+      `;
+    });
   }
 }

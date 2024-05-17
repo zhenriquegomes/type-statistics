@@ -1,7 +1,7 @@
 import calculateStatistics from "./CalculateStatistics";
 import fetchData from "./FetchData";
 import parseTransaction from "./ParseTransaction";
-import { showStatistics } from "./ShowStatistics";
+import { showStatistics, showTransactions } from "./ShowStatistics";
 import UnparsedTransaction from "./types/UnparsedTransaction";
 
 const unparsedTransactions = await fetchData<UnparsedTransaction[]>(
@@ -14,4 +14,5 @@ if (unparsedTransactions) {
   });
   const statistics = calculateStatistics(transactions);
   showStatistics(statistics);
+  showTransactions(transactions);
 }

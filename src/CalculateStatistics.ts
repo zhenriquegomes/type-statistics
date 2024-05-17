@@ -2,7 +2,7 @@ import Transaction from "./types/Transaction";
 
 function calculateTotal(transactions: Transaction[]): number {
   return transactions.reduce((previous, transaction) => {
-    return previous + transaction.valor;
+    return previous + transaction.value;
   }, 0);
 }
 
@@ -31,31 +31,31 @@ function getBestSalesDay(transactions: Transaction[]): string {
     ["Saturday"]: 0,
   };
   for (let i = 0; i < transactions.length; i++) {
-    if (transactions[i].data.getDay() === 0) {
+    if (transactions[i].date.getDay() === 0) {
       week["Sunday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 1) {
+    if (transactions[i].date.getDay() === 1) {
       week["Monday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 2) {
+    if (transactions[i].date.getDay() === 2) {
       week["Tuesday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 3) {
+    if (transactions[i].date.getDay() === 3) {
       week["Wednesday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 4) {
+    if (transactions[i].date.getDay() === 4) {
       week["Thursday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 5) {
+    if (transactions[i].date.getDay() === 5) {
       week["Friday"] += 1;
       continue;
     }
-    if (transactions[i].data.getDay() === 6) {
+    if (transactions[i].date.getDay() === 6) {
       week["Saturday"] += 1;
       continue;
     }

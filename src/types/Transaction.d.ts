@@ -1,12 +1,12 @@
 interface Transaction {
   id: number;
   status: keyof PaymentStatus;
-  data: Date;
-  nome: string;
+  date: Date;
+  name: string;
   email: string;
-  formaPagamento: keyof FormOfPayment;
-  valor: number;
-  isClienteNovo: boolean;
+  paymentMethod: keyof FormOfPayment;
+  value: number;
+  isNewClient: boolean;
 }
 
 export default Transaction;
